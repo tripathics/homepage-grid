@@ -1,8 +1,7 @@
-from ast import Pass
-from crypt import methods
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route("/")
 def index():
@@ -16,9 +15,9 @@ def projects():
 def posts():
     return render_template("posts.html")
 
-@app.route("/galary")
+@app.route("/gallery")
 def galary():
-    return render_template("galary.html")
+    return render_template("gallery.html")
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():

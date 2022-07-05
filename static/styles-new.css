@@ -1,24 +1,7 @@
 :root {
-    /* colors */
-    --gray-0: rgb(248, 249, 250);
-    --gray-05: rgb(243, 246, 249);
-    --gray-1: rgb(241, 243, 245);
-    --gray-2: rgb(233, 236, 239);
-    --gray-3: rgb(222, 226, 230);
-    --gray-4: rgb(207, 212, 217);
-    --gray-5: rgb(173, 181, 189);
-    --gray-6: rgb(134, 142, 150);
-    --gray-7: rgb(75, 80, 86);
-    --gray-8: rgb(49, 54, 59);
-    --gray-9: rgb(33, 37, 41);
-    --gray-10: rgb(22, 25, 28);
-    
-    --gray-2-grad: 233, 236, 239;
-    --gray-3-grad: 222, 226, 230;
-
-    scroll-behavior: smooth;
-    scroll-padding-top: 5.2rem;
     font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.2rem;
 }
 
 *, ::before, ::after {
@@ -45,8 +28,12 @@ input, textarea, button, select, a {
     user-select: none;
 }
 
+.ctnr {
+    padding: 3rem 2.5rem;
+}
+
 body {
-    background-color: var(--gray-8);
+    background-color: #333333;
     font-family: 'Lato', sans-serif;
     font-size: 1.025rem;
 }
@@ -62,20 +49,22 @@ ul, ol {
 }
 
 h1 {
-    font-size: 2.8em;
+    font-size: 2em;
+}
+
+h1, h2 {
     font-weight: 600;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin: 1.2em 0 0.8em;
     letter-spacing: 0.015em;
-    font-weight: 600;
 }
 
 h3 {
     margin: 1em 0 0.7em;
-    font-size: 1.2em;
+    font-size: 1.17em;
 }
 
 h1.title {
@@ -92,13 +81,12 @@ a:hover {
     text-decoration: underline;
 }
 
-/********** Navigation **********/
+/* Navigation */
 
 nav {
     position: sticky;
     font-size: 1.2em;
     top: 0;
-    border-radius: 0 0 0 0.8rem;
 }
 
 /* Nav bar on top */
@@ -109,7 +97,7 @@ nav {
     align-items: center;
     padding: .2rem;
     border-radius: 0 0 0 0.8rem;
-    background-color: var(--gray-9);
+    background-color: #252525;
     height: 3rem;
 }
 
@@ -142,7 +130,7 @@ nav {
 /* Nav items within expanded nav */
 #nav-exp-items {
     width: 100%;
-    background-color: var(--gray-9);
+    background-color: #252525;
     position: absolute;
     padding-bottom: 0.5em;
     border-radius: 0 0 0 0.8rem;
@@ -175,6 +163,7 @@ button.menu {
     height: 2.4rem;
     width: 2.4rem;
     margin-right: 0.2rem;
+    padding: 0.4rem;
 }
 
 button.menu path, button.menu g {
@@ -213,7 +202,7 @@ button.menu:active {
     }
 }
 
-/********* Greet div *********/
+/* Greet div */
 
 .greet {
     background-color: transparent;
@@ -223,13 +212,13 @@ button.menu:active {
 }
 
 h1.profile-name {
-    color: white;
+    color: #fff;
     margin: 0 0 0.8rem;
     font-size: 2.1rem;
 }
 
 div.greet p {
-    color: var(--gray-3);
+    color: #efefef;
     margin: 0 0 0.8rem;
 }
 
@@ -247,7 +236,7 @@ div.pp {
     max-height: 200px;
     overflow: hidden;
     margin: 0 auto 1rem;
-    box-shadow: 0 0 4px 2px var(--gray-10);
+    box-shadow: 0 0 4px 1px #0a0a0a;
 }
 
 div.social {
@@ -257,22 +246,22 @@ div.social {
 }
 
 div.social svg {
-    fill: var(--gray-4);
+    /* fill: #2e2e2e; */
+    fill: #eee;
     width: 1.5em;
     height: 1.5em;
     margin: 0px 5px;
 }
 
-div.social a:active svg, div.social a:hover svg {
-    fill: white;
+div.social a:active svg {
+    fill: #ffffff;
 }
 
 /* Main */
 main {
     border-radius: 0 0.8rem 0.8rem 0;
     margin-right: 0.3rem;
-    padding-bottom: 0.1rem;
-    background-color: var(--gray-1);
+    background-color: #f3f3f3;
 }
 
 /* Footer */
@@ -287,40 +276,7 @@ footer {
     text-align: center;
 }
 
-/********* Home *********/
-
-/* sections */
-.container {
-    margin: 1rem 2.8rem 3rem;
-}
-
-.head-container {
-    padding: 3.5rem 2.8rem 2rem;
-}
-
-/* hero section */
-header.hero {
-    background: no-repeat url(media/logo-white2.svg), 
-    linear-gradient(180deg, rgba(var(--gray-3-grad), 1) 0%, 
-                    rgba(var(--gray-3-grad), 0.75) 49%, 
-                    rgba(var(--gray-3-grad), 0.6) 75%, 
-                    rgba(var(--gray-3-grad), 0) 95%,
-                    rgba(var(--gray-3-grad), 0) 100%);
-    background-size: contain;
-    background-position: right center;
-    border-radius: 0 0.8rem 0 0;
-}
-
-p.hero-description {
-    margin: 1.5rem 0 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #312B25;
-}
-
-/* headings */
-
+/* Home */
 [id^="section-"] a {
     color: black;
 }
@@ -330,84 +286,13 @@ p.hero-description {
 }
 
 /* Posts in home */
-.posts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+
+.wnew {
+    margin-bottom: 1.5rem;
 }
 
-@media screen and (max-width: 1130px) {
-    .posts {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (max-width: 550px) {
-    .posts {
-        grid-template-columns: 1fr;
-    }
-}
-
-.card {
-    background-color: var(--gray-3);
-    padding: 1.5rem;
-    border-radius: 0.25rem;
-}
-
-.card time {
-    font-family: monospace;
-    font-size: 0.8rem;
-    color: var(--gray-7);
-}
-
-.card h3 {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-}
-
-.card a {
-    color: black;
-}
-
-.card a:hover {
-    text-decoration: underline;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.tag {
-    font-family: monospace;
-    font-size: 0.7rem;
-    border: solid 1px var(--gray-5);
-    background-color: var(--gray-1);
-    padding: 0.2rem 0.3rem;
-    margin: 0.2rem 0.3rem;
-    border-radius: 0.25rem;
-}
-
-.tag:hover {
-    border: solid 1px var(--gray-10);
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-}
-
-/****** Mobile screens ********/
-@media screen and (max-width: 710px) {
-    .container {
-        margin: 1rem 2rem 1.5rem;
-    }
-
-    .head-container {
-        padding: 2rem 2rem 1rem;
-    }
-
-    .head-container > h1 {
-        font-size: 2.4rem;
-    }
+.wnew h3 {
+    margin-bottom: 0.8em;
 }
 
 hr {
@@ -472,10 +357,8 @@ hr {
     margin-bottom: 0;
 }
 
-/* Resume */
 
-
-/*********** Contact ***********/
+/* Contact form */
 
 form.form-control {
     width: 85%;
@@ -627,7 +510,7 @@ div#todo > img {
             min-height: 530px;
             overflow-y: scroll;
             scroll-behavior: smooth;
-            scroll-padding-top: 3.2rem;
+            scroll-padding-top: 1.2rem;
         }
         
         footer {

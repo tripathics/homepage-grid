@@ -3,83 +3,139 @@
 {% block title %}{% endblock %}
 {% block main %}
 
-<h1 id="section-h1"><a href="#section-h1">Hello!</a></h1>
+<header class="head-container hero">
+    <h1 class="hero-heading" id="section-hero"><a href="#section-hero">Hello!</a></h1>
 
-<p>I am Chandrashekhar, a computer science student pursuing B. Tech. from <a href="https://www.nitap.ac.in/" target="_blank" rel="noreferrer">National Institute of Technology, Arunachal Pradesh</a>. I did my high school graduation from <a href="https://ghssrupa.co.in" target="_blank" rel="noreferrer">Govt. Hr. Sec. School, Rupa</a> in Arunachal Pradesh.</p>
+    <p class="hero-description">I'm Chandrashekhar, a computer science student pursuing B. Tech. from <a href="https://www.nitap.ac.in/" target="_blank" rel="noreferrer">NIT Arunachal Pradesh</a>. I like pop music, coding, sketching and shooting photos.
+    <br><br>
+    This is the spot for finding my projects and articles I share with the world &#128518;</p>    
+</header>
 
-<p>I am an artist, coder and an engineer. I enjoy learning technologies and using them to solve real world problems. Sometimes I write what I learnt in blogs. I also enjoy travelling and shooting photos. I doodle cartoons when I am not working &#128518;. </p>
-<br>
-<p>Technologies I currently work with</p>
-<ul>
-    <li>OSes: <span style="color: #332f7e;">Linux (Debian)</span></li>
-    <li>Programming languages: <span style="color: #332f7e;">C, C++, Java</span></li>
-    <li>Scripting languages: <span style="color: #332f7e;">Python, JavaScript, Bash</span></li>
-    <li>Markup languages: <span style="color: #332f7e;">HTML, Markdown</span></li>
-    <li>Version control: <span style="color: #332f7e;">Git</span></li>
-    <li>Database: <span style="color: #332f7e;">SQL</span></li>
-    <li>Frameworks: <span style="color: #332f7e;">Flask, NodeJS</span></li>
-    <li>Designing: <span style="color: #332f7e;">CSS</span></li>
-</ul>
+<section class="container">
+    <h2 id="section-h1"><a href="#section-h1">Technologies I work with</a></h2>
+    <ul>
+        <li>OSes: <span style="color: #332f7e;">Linux (Debian)</span></li>
+        <li>Programming languages: <span style="color: #332f7e;">C, C++, Java</span></li>
+        <li>Scripting languages: <span style="color: #332f7e;">Python, TypeScript, JavaScript, Bash</span></li>
+        <li>Markup languages: <span style="color: #332f7e;">HTML, Markdown</span></li>
+        <li>Version control: <span style="color: #332f7e;">Git</span></li>
+        <li>Database: <span style="color: #332f7e;">SQL, Firebase</span></li>
+        <li>Backend Frameworks: <span style="color: #332f7e;">Django, NodeJS, Flask</span></li>
+        <li>Frontend Frameworks: <span style="color: #332f7e;">Angular, React</span></li>
+        <li>Designing: <span style="color: #332f7e;">CSS</span></li>
+    </ul>
+    <br>
+    <p>Contact me at <a href="mailto:tripathics@outlook.com">tripathics@outlook.com</a>.</p>
+</section>
 
-<br>
-<p>Contact me at <a href="mailto:tripathics@outlook.com">tripathics@outlook.com</a>.</p>
+<section class="container">
+    <h2 id="section-h2"><a href="#section-h2">What's new</a></h2>
+    <div class="posts">
+        <article class="card">
+            <time>Jul 1, 2022</time>
+            <h3><a href="">My journey of learning React</a></h3>
+            <div class="tags">
+                <span class="tag">Front-end</span> 
+                <span class="tag">React</span> 
+                <span class="tag">Walkthrough</span> 
+            </div>
+        </article>
 
+        <article class="card">
+            <time>Jun 5, 2022</time>
+            <h3><a href="">My journey through Angular</a></h3>
+            <div class="tags">
+                <span class="tag">Front-end</span> 
+                <span class="tag">TypeScript</span> 
+                <span class="tag">Walkthrough</span> 
+            </div>
+        </article>
 
-<h2 id="section-h2"><a href="#section-h2">What's new</a></h2>
+        <article class="card">
+            <time>February 28, 2022</time>
+            <h3><a href="">Introduction to Linux Terminal</a></h3>
+            <div class="tags">
+                <span class="tag">Command line</span> 
+                <span class="tag">Terminal</span> 
+                <span class="tag">Linux</span> 
+            </div>
+        </article>
 
-<div class="wnew">
-    <h3>Installing Arch Linux on a Virtualbox VM</h3>
-    <p class="date"></p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptas, iure distinctio nihil architecto atque veniam excepturi accusantium itaque esse! Praesentium recusandae sit at earum officiis et expedita ex vitae.</p>
-    <p><a href="#">read more</a></p>
-</div>
-
-<div class="wnew">
-    <h3>Creating a simple typing game webapp</h3>
-    <p class="date"></p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum voluptate magni distinctio quis provident temporibus aliquam autem, officiis quam vitae corrupti laudantium enim.</p>
-    <p><a href="#">read more</a></p>
-</div>
-
-<div class="wnew">
-    <h3>Setting up the environment to learn to code for the first time</h3>
-    <p class="date"></p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ullam. Blanditiis repudiandae tempore, assumenda, cumque alias consectetur dolore repellendus, vitae sapiente error perspiciatis soluta saepe!</p>
-    <p><a href="#">read more</a></p>
-</div>
-
-<h2 id="section-h3"><a href="#section-h3">Featured projects</a></h2>
-
-<article class="proj">
-    <div class="clipart">
-        <img src="./static/media/typing-game.png" alt="Typewriter clipart">
+        <article class="card">
+            <time>January 27, 2022</time>
+            <h3><a href="">Installing Arch Linux on a Virtualbox VM</a></h3>
+            <div class="tags">
+                <span class="tag">Linux</span> 
+                <span class="tag">OS</span> 
+                <span class="tag">VM</span> 
+            </div>
+        </article>
+        
+        <article class="card">
+            <time>December 18, 2021</time>
+            <h3><a href="">Creating a simple typing game webapp</a></h3>
+            <div class="tags">
+                <span class="tag">JavaScript</span> 
+                <span class="tag">Events</span> 
+                <span class="tag">API</span> 
+            </div>
+        </article>
+        
+        <article class="card">
+            <time>August 17, 2020</time>
+            <h3><a href="">Setting up a coding environment for first time coders</a></h3>
+            <div class="tags">
+                <span class="tag">IDE</span> 
+                <span class="tag">C</span> 
+                <span class="tag">VSCode</span> 
+            </div>
+        </article>
     </div>
-    <div class="text">
-        <h3><a href="https://tripathics.github.io/typing-game" target="_blank" rel="noreferrer">Typing Game</a></h3>
-        <p>A typing website for both mobile and desktop made out of HTML, CSS and JavaScript.</p>
-    </div>
-</article>
+</section>
 
-<article class="proj">
-    <div class="clipart">
-        <img src="./static/media/dna.png" alt="DNA clipart">
-    </div>
-    <div class="text">
-        <h3><a href="https://github.com/tripathics/projects/tree/main/filter_more" target="_blank" rel="noreferrer">dna.py</a></h3>
-        <p>A Python CLI program to identify a person from the database given their DNA sequence.</p>
-    </div>
-</article>
+<section class="container projects">
+    <h2 id="section-h3"><a href="#section-h3">Featured projects</a></h2>
+    
+    <article class="proj">
+        <div class="clipart">
+            <img src="./static/media/typing-game.png" alt="Typewriter clipart">
+        </div>
+        <div class="text">
+            <h3><a href="https://tripathics.github.io/typing-game" target="_blank" rel="noreferrer">Typing Game</a></h3>
+            <p>A typing website for both mobile and desktop made out of HTML, CSS and JavaScript.</p>
+        </div>
+    </article>
+    
+    <article class="proj">
+        <div class="clipart">
+            <img src="./static/media/dna.png" alt="DNA clipart">
+        </div>
+        <div class="text">
+            <h3><a href="https://github.com/tripathics/projects/tree/main/filter_more" target="_blank" rel="noreferrer">dna.py</a></h3>
+            <p>A Python CLI program to identify a person from the database given their DNA sequence.</p>
+        </div>
+    </article>
+    
+    <article class="proj">
+        <div class="clipart">
+            <img src="./static/media/todo.png" alt="Todo list clipart">
+        </div>
+        <div class="text">
+            <h3><a href="https://github.com/tripathics/projects/tree/main/todo_list" target="_blank" rel="noreferrer">Todo List</a></h3>
+            <p>A Python CLI program to create and manage your todo lists.</p>
+        </div>
+    </article>
+    
+    <p><a href="/projects">More projects</a></p>
+</section>
 
-<article class="proj">
-    <div class="clipart">
-        <img src="./static/media/todo.png" alt="Todo list clipart">
+<section class="container resume">
+    <h2 id="section-h4"><a href="#section-h4">Resume</a></h2>
+    <div class="image-wrapper">
+        <a href="static/media/Chandrashekhar_Tripathi-resume.pdf">
+            <img src="static/media/Chandrashekhar_Tripathi-resume.png" alt="resume" title="Click to download pdf">
+        </a>
     </div>
-    <div class="text">
-        <h3><a href="https://github.com/tripathics/projects/tree/main/todo_list" target="_blank" rel="noreferrer">Todo List</a></h3>
-        <p>A Python CLI program to create and manage your todo lists.</p>
-    </div>
-</article>
-
-<p><a href="/projects">More projects</a></p>
+</section>
 
 {% endblock %}

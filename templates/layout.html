@@ -24,7 +24,7 @@
 </head>
 <body class="grid-container">
     <!-- Navigation -->
-    <nav class="grid-item">
+    <nav>
         <div id="nav-bar">
             <button id="menu-btn" class="menu" onclick="toggleMenu()" aria-label="Menu button">
                 <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
@@ -51,7 +51,7 @@
         </div>
     </nav>
     <!-- Greet -->
-    <div class="greet grid-item">
+    <div class="greet ">
         <div class="pp">
             <img src="static/media/pp1.jpeg" alt="Chandrashekhar Tripathi" height="200" width="200">
         </div>
@@ -77,12 +77,12 @@
         </div>
     </div>
     <!-- Main body -->
-    <main class="grid-item">
+    <main>
     {% block main %}
     {% endblock %}
     </main>
     <!-- Footer -->
-    <footer class="grid-item">
+    <footer>
         &copy; 2021-Present Chandrashekhar Tripathi
     </footer>
 </body>

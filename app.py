@@ -15,6 +15,10 @@ def projects():
 def posts():
     return render_template("posts.html")
 
+@app.route("/post")
+def post():
+    return render_template("post.html")
+
 @app.route("/gallery")
 def galary():
     return render_template("gallery.html")

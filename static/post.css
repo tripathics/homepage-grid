@@ -1,0 +1,52 @@
+/* Grid layout */
+
+@supports(display: grid) {
+    @media screen and (min-width: 925px) {
+        .grid-container {
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .post-ctnr {
+            display: grid;
+            column-gap: 2rem;
+            grid-template-columns: 1fr 15rem;
+            grid-template-areas: "txt toc";
+        }
+
+        section.post {
+            grid-area: txt;
+        }
+
+        aside.toc {
+            position: sticky;
+            top: var(--page-offset);
+            grid-area: toc;
+            max-height: calc(100vh - var(--page-offset));
+        }
+    }
+}
+
+pre {
+    border: solid 1px var(--gray-4);
+	border-radius: 0.4rem;
+	margin: 1rem 0;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+pre > code {
+
+    font-size: 0.85rem;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 1em 0 0.8em;
+    letter-spacing: 0.015em;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 1em 0 0.7em;
+    font-size: 1.2em;
+}

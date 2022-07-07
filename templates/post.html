@@ -1,9 +1,171 @@
-{% extends "layout.html" %}
+{% extends "postLayout.html" %}
 
-{% block customStyle %}{% endblock %}
-{% block title %}Post{% endblock %}
-{% block main %}
+{% block postSection %}
+<h2 id="section-h1"><a href="#section-h1">Python</a></h2>
+<h3 id="section-h10"><a href="#section-h10">Printing 'hello, world'</a></h3>
+<pre><code class="language-python">print(&quot;hello, world&quot;)
+</code></pre>
+<p>we don't need <code>\n</code> or <code>;</code> here as we did in C</p>
+<h3 id="section-h11"><a href="#section-h11">getting input</a></h3>
+<p><strong>in C:</strong></p>
+<pre><code class="language-C">string answer = get_string(&quot;What's your name? &quot;);
+printf(&quot;hello, %s\n&quot;, answer);
+</code></pre>
+<p><strong>in Python:</strong></p>
+<pre><code class="language-python">answer = get_string(&quot;What's your name? &quot;)
+print(&quot;Hello, &quot; + answer)
+</code></pre>
+<h2 id="section-h2"><a href="#section-h2">F-Strings</a></h2>
+<p>The last program can be implemented in a different way as follows</p>
+<pre><code class="language-python">from cs50 import get_string
 
+answer = get_string(&quot;What's your name? &quot;)
+print(f&quot;hello, {answer}&quot;)
+</code></pre>
+<p>shown in: <a href="name-f.py">name-f.py</a></p>
+<p>Just like in C, we still have for counter variables</p>
+<p><strong>in C:</strong></p>
+<pre><code class="language-C">counter = 0;
+counter = counter + 1;
 
+/* or */
+counter += 1;
+
+/* or */
+counter ++;
+</code></pre>
+<p><strong>in Python</strong></p>
+<pre><code class="language-python">counter = 0
+counter = counter + 1
+
+# or 
+counter += 1
+
+# this syntactic sugar does not exist
+counter++
+</code></pre>
+<h2 id="section-h3"><a href="#section-h3">Conditions</a></h2>
+<p><strong>in C:</strong></p>
+<pre><code class="language-C">if (x &lt; y)
+{
+    printf(&quot;x is less than y\n&quot;);
+}
+</code></pre>
+<p><strong>in Python:</strong></p>
+<pre><code class="language-python">if x &lt; y:
+    print(&quot;X is less than y&quot;)       # but indentation is must
+</code></pre>
+<p>illustrated in</p>
+<ul>
+<li><a href="conditions.py">conditions.py</a></li>
+<li><a href="conditions2.py">conditions2.py</a></li>
+<li><a href="conditions3.py">conditions3.py</a></li>
+</ul>
+<h2 id="section-h4"><a href="#section-h4">Loops</a></h2>
+<p><strong>in C:</strong>
+we had <code>while</code>, <code>for</code> loops</p>
+<p>e.g.</p>
+<pre><code class="language-C">while (true)
+{
+    printf(&quot;hello, world\n&quot;);
+}
+</code></pre>
+<p><strong>in Python:</strong></p>
+<pre><code class="language-python">while True:                     # True must be capitalized
+    print(&quot;hello, world&quot;)
+</code></pre>
+<p>illustrated in</p>
+<ul>
+<li><a href="loop.py">loop.py</a></li>
+<li><a href="loop2.py">loop2.py</a></li>
+<li><a href="loop3.py">loop3.py</a></li>
+<li><a href="loop4.py">loop4.py</a></li>
+</ul>
+<p>repeating for a number of times</p>
+<p><strong>in C:</strong></p>
+<pre><code class="language-C">int i = 0;
+while (i &lt; 3)
+{
+    printf(&quot;hello, world&quot;);
+    i++;
+}
+</code></pre>
+<p><strong>in Python</strong></p>
+<pre><code class="language-python">i = 0
+while i &lt; 3:
+    print(&quot;hello, world&quot;)
+    i += 1
+</code></pre>
+<p><strong>like the for loop in C, we have a foreach loop in python</strong></p>
+<pre><code class="language-python">for i in [0, 1, 2]:   # &lt;-- this is a list
+    print(&quot;Hello, world&quot;)
+</code></pre>
+<h2 id="section-h5"><a href="#section-h5">Types</a></h2>
+<ul>
+<li>Python is a &quot;loosely typed language&quot; while C is a &quot;strongly typed language&quot;</li>
+</ul>
+<p><strong>Data types in python:</strong></p>
+<ul>
+<li>bool</li>
+<li>float</li>
+<li>int</li>
+<li>str (string)</li>
+</ul>
+<h2 id="section-h6"><a href="#section-h6">Sequence types</a></h2>
+<p><strong>other data types:</strong></p>
+<ul>
+<li>range</li>
+<li>list (an array that resizes itself)</li>
+<li>tuple (for implementing comma separated values)</li>
+<li>dict (store)</li>
+<li>set (just like in maths without duplicate elements)</li>
+</ul>
+<h2 id="section-h7"><a href="#section-h7">cs50 library</a></h2>
+<p>cs50 library for python contains:</p>
+<ul>
+<li>get_string</li>
+<li>get_int</li>
+<li>get_float</li>
+</ul>
+<p>we can import explicitely one function at a time</p>
+<pre><code class="language-python">from cs50 import get_string
+from cs50 import get_float
+
+# or
+
+import cs50
+</code></pre>
+<h2 id="section-h8"><a href="#section-h8">blur.py</a></h2>
+<pre><code class="language-python">from PIL import image, imageFilter
+before = Image.open(&quot;bridge.bmp&quot;)             # '.' is serving a new role here
+
+# in C we used . to access a variable inside a struct
+# in Python we can have functions inside a structure
+
+after = before.filter(ImageFilter.BoxBlur(10))
+
+after.save(&quot;out.bmp&quot;)
+</code></pre>
+<h2 id="section-h9"><a href="#section-h9">Python Short</a></h2>
+<p>Access the <a href="Python_short.ipynb">jupyter notebook</a> for short on Python</p>
+{% endblock %}
+
+{% block toc %}
+<ul>
+<li><a href="#section-h1">Python</a>
+<ul>
+<li><a href="#section-h10">Printing 'hello, world'</a></li>
+<li><a href="#section-h11">getting input</a></li>
+</ul>
+</li>
+<li><a href="#section-h2">F-Strings</a></li>
+<li><a href="#section-h3">Conditions</a></li>
+<li><a href="#section-h4">Loops</a></li>
+<li><a href="#section-h5">Types</a></li>
+<li><a href="#section-h6">cs50 library</a></li>
+<li><a href="#section-h7">blur.py</a></li>
+<li><a href="#section-h8">Python Short</a></li>
+</ul>
 
 {% endblock %}
+

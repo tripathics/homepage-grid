@@ -17,12 +17,9 @@ print(&quot;Hello, &quot; + answer)
 </code></pre>
 <h2 id="section-h2"><a href="#section-h2">F-Strings</a></h2>
 <p>The last program can be implemented in a different way as follows</p>
-<pre><code class="language-python">from cs50 import get_string
-
-answer = get_string(&quot;What's your name? &quot;)
+<pre><code class="language-python">answer = input(&quot;What's your name? &quot;)
 print(f&quot;hello, {answer}&quot;)
 </code></pre>
-<p>shown in: <a href="name-f.py">name-f.py</a></p>
 <p>Just like in C, we still have for counter variables</p>
 <p><strong>in C:</strong></p>
 <pre><code class="language-C">counter = 0;
@@ -120,21 +117,6 @@ while i &lt; 3:
 <li>dict (store)</li>
 <li>set (just like in maths without duplicate elements)</li>
 </ul>
-<h2 id="section-h7"><a href="#section-h7">cs50 library</a></h2>
-<p>cs50 library for python contains:</p>
-<ul>
-<li>get_string</li>
-<li>get_int</li>
-<li>get_float</li>
-</ul>
-<p>we can import explicitely one function at a time</p>
-<pre><code class="language-python">from cs50 import get_string
-from cs50 import get_float
-
-# or
-
-import cs50
-</code></pre>
 <h2 id="section-h8"><a href="#section-h8">blur.py</a></h2>
 <pre><code class="language-python">from PIL import image, imageFilter
 before = Image.open(&quot;bridge.bmp&quot;)             # '.' is serving a new role here
@@ -146,8 +128,6 @@ after = before.filter(ImageFilter.BoxBlur(10))
 
 after.save(&quot;out.bmp&quot;)
 </code></pre>
-<h2 id="section-h9"><a href="#section-h9">Python Short</a></h2>
-<p>Access the <a href="Python_short.ipynb">jupyter notebook</a> for short on Python</p>
 {% endblock %}
 
 {% block toc %}
@@ -162,9 +142,7 @@ after.save(&quot;out.bmp&quot;)
 <li><a href="#section-h3">Conditions</a></li>
 <li><a href="#section-h4">Loops</a></li>
 <li><a href="#section-h5">Types</a></li>
-<li><a href="#section-h6">cs50 library</a></li>
 <li><a href="#section-h7">blur.py</a></li>
-<li><a href="#section-h8">Python Short</a></li>
 </ul>
 
 {% endblock %}

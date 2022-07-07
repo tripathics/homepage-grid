@@ -1,6 +1,4 @@
 const fs = require('fs');
-
-
 const md = require('markdown-it')();
 const markdownItAttrs = require('markdown-it-attrs');
 
@@ -14,6 +12,15 @@ md.use(markdownItAttrs, {
   rightDelimiter: '}',
   allowedAttributes: []  // empty array = all attributes are allowed
 });
+
+fs.readFile('./post.md', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    console.log(data);
+})
 
 var txt = `
 ## [Python](#section-h1) {#section-h1}

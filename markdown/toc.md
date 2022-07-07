@@ -5,6 +5,4 @@
 * [Conditions](#section-h3)
 * [Loops](#section-h4)
 * [Types](#section-h5)
-* [cs50 library](#section-h6)
 * [blur.py](#section-h7)
-* [Python Short](#section-h8)

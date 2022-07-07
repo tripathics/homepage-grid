@@ -25,14 +25,9 @@ print("Hello, " + answer)
 The last program can be implemented in a different way as follows
 
 \`\`\`python
-from cs50 import get_string
-
-answer = get_string("What's your name? ")
+answer = input("What's your name? ")
 print(f"hello, {answer}")
 \`\`\`
-
-shown in: [name-f.py](name-f.py)
-
 
 Just like in C, we still have for counter variables
 
@@ -150,24 +145,6 @@ for i in [0, 1, 2]:   # <-- this is a list
 - dict (store) 
 - set (just like in maths without duplicate elements)
 
-
-## [cs50 library](#section-h7) {#section-h7}
-
-cs50 library for python contains:
-- get_string
-- get_int
-- get_float
-
-we can import explicitely one function at a time
-\`\`\`python
-from cs50 import get_string
-from cs50 import get_float
-
-# or
-
-import cs50
-\`\`\`
-
 ## [blur.py](#section-h8) {#section-h8}
 
 \`\`\`python
@@ -181,6 +158,3 @@ after = before.filter(ImageFilter.BoxBlur(10))
 
 after.save("out.bmp")
 \`\`\`
-
-## [Python Short](#section-h9) {#section-h9}
-Access the [jupyter notebook](Python_short.ipynb) for short on Python

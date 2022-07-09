@@ -1,3 +1,5 @@
+# [Python for C programmers](#section-p0) {#section-p0}
+
 ## [Python](#section-h1) {#section-h1}
 
 ### [Printing 'hello, world'](#section-h10) {#section-h10}

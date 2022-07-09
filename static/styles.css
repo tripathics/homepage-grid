@@ -44,6 +44,7 @@
     --indigo-dark: rgb(69, 9, 207);
     --indigo-light: rgb(150, 155, 245);
     --indigo-muted: rgb(241, 242, 253);
+    --color-neutral-muted: rgba(175,184,193,0.2)
 
     --gray-2-grad: 233, 236, 239;
     --gray-3-grad: 222, 226, 230;
@@ -74,7 +75,7 @@ button:focus {
 }
 
 /* For disabling that blue highlight on links */
-input, textarea, button, select, a {
+input, textarea, button, select {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -86,12 +87,12 @@ input, textarea, button, select, a {
 
 body {
     background-color: var(--gray-8);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 p {
     margin: 0.5rem 0;
-    letter-spacing: 0.015rem;
+    letter-spacing: -0.01rem;
     line-height: 1.6rem;
 }
 
@@ -99,21 +100,26 @@ ul, ol {
     line-height: 1.6rem;
 }
 
+h1, h2, h3 {
+    letter-spacing: -0.03rem;
+}
+
 h1 {
-    font-size: 2.8em;
+    font-size: 2.8rem;
     font-weight: 600;
+    margin: 0 0 1.5rem;
 }
 
 h2 {
-    font-size: 1.8em;
-    margin-bottom: 0.8em;
-    letter-spacing: 0.015em;
-    font-weight: 600;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    /* margin-bottom: 0.8rem; */
+    font-weight: 500;
 }
 
 h3 {
-    margin-bottom: 0.7em;
-    font-size: 1.2em;
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
 }
 
 h1.title {
@@ -154,7 +160,8 @@ a:hover {
 
 nav {
     position: sticky;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    font-weight: 450;
     top: 0;
 }
 
@@ -185,15 +192,12 @@ nav {
 }
 
 #nav-colapse-items a, #nav-exp-items a {
-    text-decoration: none;
     color: var(--gray-4);
-    font-weight: 500;
 }
 
 #nav-colapse-items a:hover, #nav-exp-items a:hover {
+    font-weight: 500;
     color: white;
-    text-decoration: underline;
-    text-decoration-color: white;
 }
 
 /* Nav items within expanded nav */
@@ -214,6 +218,7 @@ nav {
 }
 
 button.menu {
+    display: none;
     background-color: transparent;
     border: none;
     border-radius: .275rem;
@@ -239,16 +244,7 @@ button.menu:active {
         display: block;
     }
 }
-
 @media screen and (min-width: 550px) {
-    #nav-colapse-items {
-        display: flex;
-    }
-
-    button.menu {
-        display: none;
-    }
-
     #nav-exp-items {
         display: none;
     }
@@ -266,7 +262,7 @@ button.menu:active {
 h1.profile-name {
     color: white;
     margin: 0 0 0.8rem;
-    font-size: 2.1rem;
+    font-size: 2rem;
 }
 
 div.greet p {
@@ -330,11 +326,12 @@ footer {
 
 /* sections */
 .container {
-    margin: 1rem 2.8rem 3rem;
+    margin: 1rem 0 3rem;
+    padding: 0 2.8rem;
 }
 
 .head-container {
-    padding: 3.4rem 2.8rem;
+    padding: 3.4rem 2.8rem 0;
 }
 
 /* hero section */
@@ -352,6 +349,7 @@ header.hero {
 p.hero-description {
     margin: 1.5rem 0 1rem;
     font-size: 1.25rem;
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: normal;
     color: #312B25;
@@ -482,7 +480,8 @@ p.hero-description {
 /****** Mobile screens ********/
 @media screen and (max-width: 710px) {
     .container {
-        margin: 1rem 2rem 1.5rem;
+        margin: 1rem 0;
+        padding: 0 2rem;
     }
 
     .head-container {
@@ -491,6 +490,10 @@ p.hero-description {
 
     .head-container > h1 {
         font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
     }
 }
 
@@ -505,7 +508,8 @@ hr {
 .proj {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    /* margin-bottom: 2rem; */
 }
 
 .proj > hr {
@@ -553,6 +557,11 @@ hr {
 }
 
 /* Resume */
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+}
 
 
 /*********** Contact ***********/
@@ -679,7 +688,7 @@ div#todo > img {
                 "nul nv"
                 "grt mn"
                 "ftr mn";
-            grid-template-columns: minmax(21rem, 2fr) minmax(0, 3fr);
+            grid-template-columns: minmax(21rem, 1fr) minmax(0, 2fr);
             grid-template-rows: var(--main-offset) 530px auto;
         }
         

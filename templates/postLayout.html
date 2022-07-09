@@ -1,25 +1,29 @@
 {% extends "layout.html" %}
 
 {% block customStyle %}
+    <!-- space mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/post.css">
     <!-- highlightjs -->    
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <link rel="stylesheet" href="static/vs.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-
-    <link rel="alternate stylesheet" title="Github" href="styles/github.css">
+    
     <script>hljs.highlightAll();</script>
 {% endblock %}
-{% block title %}Post{% endblock %}
+{% block title %}Post | {% endblock %}
 {% block main %}
 
 <header class="head-container">
-    <h1 id="section-h0" class="title"><a href="#section-h0">Moving to Python (for existing functional programmers)</a></h1>
+    <h1 id="section-h0" class="title"><a href="#section-h0">
+        {% block postTitle %}{% endblock %}
+    </a></h1>
 </header>
 
-<section class="container post-ctnr">
-
+<section class="post-ctnr">
+    
     <section class="post">
-        {% block postSection %}
+        {% block postSection %}s
         {% endblock %}
     </section>
     <aside class="toc-wrapper">

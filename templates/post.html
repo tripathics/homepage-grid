@@ -1,7 +1,12 @@
 {% extends "postLayout.html" %}
 
+{% block postTitle %}
+<h1 id="section-p0"><a href="#section-p0">Python for C programmers</a></h1>
+{% endblock %}
 {% block postSection %}
-<h2 id="section-h1"><a href="#section-h1">Python</a></h2>
+
+<section id="section-h1" class="container">
+<h2><a href="#section-h1">Python</a></h2>
 <h3 id="section-h10"><a href="#section-h10">Printing 'hello, world'</a></h3>
 <pre><code class="language-python">print(&quot;hello, world&quot;)
 </code></pre>
@@ -15,7 +20,11 @@ printf(&quot;hello, %s\n&quot;, answer);
 <pre><code class="language-python">answer = get_string(&quot;What's your name? &quot;)
 print(&quot;Hello, &quot; + answer)
 </code></pre>
-<h2 id="section-h2"><a href="#section-h2">F-Strings</a></h2>
+</section>
+
+
+<section id="section-h2" class="container">
+<h2><a href="#section-h2">F-Strings</a></h2>
 <p>The last program can be implemented in a different way as follows</p>
 <pre><code class="language-python">answer = input(&quot;What's your name? &quot;)
 print(f&quot;hello, {answer}&quot;)
@@ -41,7 +50,11 @@ counter += 1
 # this syntactic sugar does not exist
 counter++
 </code></pre>
-<h2 id="section-h3"><a href="#section-h3">Conditions</a></h2>
+</section>
+
+
+<section id="section-h3" class="container">
+<h2><a href="#section-h3">Conditions</a></h2>
 <p><strong>in C:</strong></p>
 <pre><code class="language-C">if (x &lt; y)
 {
@@ -58,7 +71,11 @@ counter++
 <li><a href="conditions2.py">conditions2.py</a></li>
 <li><a href="conditions3.py">conditions3.py</a></li>
 </ul>
-<h2 id="section-h4"><a href="#section-h4">Loops</a></h2>
+</section>
+
+
+<section id="section-h4" class="container">
+<h2><a href="#section-h4">Loops</a></h2>
 <p><strong>in C:</strong>
 we had <code>while</code>, <code>for</code> loops</p>
 <p>e.g.</p>
@@ -97,7 +114,11 @@ while i &lt; 3:
 <pre><code class="language-python">for i in [0, 1, 2]:   # &lt;-- this is a list
     print(&quot;Hello, world&quot;)
 </code></pre>
-<h2 id="section-h5"><a href="#section-h5">Types</a></h2>
+</section>
+
+
+<section id="section-h5" class="container">
+<h2><a href="#section-h5">Types</a></h2>
 <ul>
 <li>Python is a &quot;loosely typed language&quot; while C is a &quot;strongly typed language&quot;</li>
 </ul>
@@ -108,7 +129,11 @@ while i &lt; 3:
 <li>int</li>
 <li>str (string)</li>
 </ul>
-<h2 id="section-h6"><a href="#section-h6">Sequence types</a></h2>
+</section>
+
+
+<section id="section-h6" class="container">
+<h2><a href="#section-h6">Sequence types</a></h2>
 <p><strong>other data types:</strong></p>
 <ul>
 <li>range</li>
@@ -117,7 +142,11 @@ while i &lt; 3:
 <li>dict (store)</li>
 <li>set (just like in maths without duplicate elements)</li>
 </ul>
-<h2 id="section-h8"><a href="#section-h8">blur.py</a></h2>
+</section>
+
+
+<section id="section-h8" class="container">
+<h2><a href="#section-h8">blur.py</a></h2>
 <pre><code class="language-python">from PIL import image, imageFilter
 before = Image.open(&quot;bridge.bmp&quot;)             # '.' is serving a new role here
 
@@ -128,22 +157,17 @@ after = before.filter(ImageFilter.BoxBlur(10))
 
 after.save(&quot;out.bmp&quot;)
 </code></pre>
-{% endblock %}
 
+</section>
+{% endblock %}
 {% block toc %}
 <ul>
-<li><a href="#section-h1">Python</a>
-<ul>
-<li><a href="#section-h10">Printing 'hello, world'</a></li>
-<li><a href="#section-h11">getting input</a></li>
-</ul>
-</li>
+<li><a href="#section-h1">Python</a></li>
 <li><a href="#section-h2">F-Strings</a></li>
 <li><a href="#section-h3">Conditions</a></li>
 <li><a href="#section-h4">Loops</a></li>
 <li><a href="#section-h5">Types</a></li>
-<li><a href="#section-h7">blur.py</a></li>
+<li><a href="#section-h6">Sequence types</a></li>
+<li><a href="#section-h8">blur.py</a></li>
 </ul>
-
 {% endblock %}
-

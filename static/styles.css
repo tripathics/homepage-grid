@@ -75,14 +75,9 @@ button:focus {
 }
 
 /* For disabling that blue highlight on links */
-input, textarea, button, select {
+input, textarea, button, select, a {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 body {
@@ -113,7 +108,6 @@ h1 {
 h2 {
     font-size: 2rem;
     margin: 0 0 1rem;
-    /* margin-bottom: 0.8rem; */
     font-weight: 500;
 }
 
@@ -193,6 +187,7 @@ nav {
 
 #nav-colapse-items a, #nav-exp-items a {
     color: var(--gray-4);
+    transition: all 0.05s ease-in;
 }
 
 #nav-colapse-items a:hover, #nav-exp-items a:hover {
@@ -357,11 +352,11 @@ p.hero-description {
 
 /* headings */
 
-[id^="section-"] a {
+h1 > a, h2 > a, h3 > a {
     color: black;
 }
 
-[id^="section-"] a:hover {
+h1 > a:hover, h2 > a:hover, h3 > a:hover {
     text-decoration: underline;
 }
 

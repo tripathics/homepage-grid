@@ -19,6 +19,10 @@ def posts():
 def post():
     return render_template("post.html")
 
+@app.route("/<name>")
+def page(name):
+    return render_template(f"{name}.html")
+
 @app.route("/gallery")
 def galary():
     return render_template("gallery.html")

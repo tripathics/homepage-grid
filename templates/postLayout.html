@@ -17,8 +17,13 @@
     
     <script>hljs.highlightAll();</script>
 {% endblock %}
-{% block title %}Post | {% endblock %}
-{% block main %}
+
+{% block title %}
+    {% block postTitle %}
+    {% endblock %}
+{% endblock %}
+
+ {% block main %}
 
 <header class="head-container">
     {% block postHero %}{% endblock %}

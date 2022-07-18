@@ -17,6 +17,7 @@ md.use(kbd)
 // jinja syntax
 const wrapper = {
     head: `{% extends "postLayout.html" %}\n\n`,
+    blockTitle: `{% block postTitle %}`,
     blockHero: `{% block postHero %}\n`,
     blockContent: `{% block postSection %}\n`,
     blockToc: `{% block toc %}\n`,
@@ -96,13 +97,17 @@ if (args.length == 1 && args[0].match(/.+.md$/)) {
             mdLines.forEach((line) => {
                 src += line + '\n';
             })
-    
+
+            // page title
+            let title = mdLines[0].slice(mdLines[0].search(/\[/)+1, mdLines[0].search(/\]/)) + ' | ';
             let mdContent = src.slice(src.search(regex.heading), src.length);
             let content = md.render(mdContent);
     
             let wrappedContent = sectionWrap(content, ids);
 
-            let result = wrapper.head + wrapper.blockHero + hero + wrapper.endBlock + 
+            // final page
+            let result = wrapper.head + wrapper.blockTitle + title + wrapper.endBlock + 
+                        wrapper.blockHero + hero + wrapper.endBlock + 
                         wrapper.blockContent + wrappedContent + wrapper.endBlock +
                         wrapper.blockToc + toc + wrapper.endBlock;
             

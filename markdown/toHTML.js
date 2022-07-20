@@ -19,6 +19,7 @@ const wrapper = {
     head: `{% extends "postLayout.html" %}\n\n`,
     blockTitle: `{% block postTitle %}`,
     blockHero: `{% block postHero %}\n`,
+    blockHeroBG: `{% block heroBG %}\n`,
     blockContent: `{% block postSection %}\n`,
     blockToc: `{% block toc %}\n`,
     endBlock: `{% endblock %}\n`,
@@ -66,7 +67,8 @@ if (args.length == 1 && args[0].match(/.+.md$/)) {
             console.error(err);
             return;
         }
-    
+        
+        let fileName = args[0].slice(0, args[0].length - 3);
         let mdLines = data.split('\n');
         if (mdLines.length) {
             let mdHero = data.slice(data.search(regex.title), data.search(regex.heading));
@@ -100,18 +102,26 @@ if (args.length == 1 && args[0].match(/.+.md$/)) {
 
             // page title
             let title = mdLines[0].slice(mdLines[0].search(/\[/)+1, mdLines[0].search(/\]/)) + ' | ';
+
+            let heroBG = `<style>
+            header.head-container {
+                background: no-repeat url(./static/media/posts/hero/${fileName}.svg) top right;
+                background-size: contain;
+            }
+            </style>`
+
             let mdContent = src.slice(src.search(regex.heading), src.length);
             let content = md.render(mdContent);
-    
             let wrappedContent = sectionWrap(content, ids);
 
             // final page
             let result = wrapper.head + wrapper.blockTitle + title + wrapper.endBlock + 
+                        wrapper.blockHeroBG + heroBG + wrapper.endBlock + 
                         wrapper.blockHero + hero + wrapper.endBlock + 
                         wrapper.blockContent + wrappedContent + wrapper.endBlock +
                         wrapper.blockToc + toc + wrapper.endBlock;
             
-            let outFile = args[0].slice(0, args[0].length - 2) + 'html'
+            let outFile = fileName + '.html'
             fs.writeFile(`../templates/${outFile}`, result, (err) => {
                 if (err) {
                     console.error(err);

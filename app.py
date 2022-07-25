@@ -38,3 +38,7 @@ def contact():
         return redirect("/contact")
     else:
         return render_template("contact.html")
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host="192.168.140.39", port="5050")

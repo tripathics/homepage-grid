@@ -56,7 +56,7 @@
 
     --nav-height: 3rem;     /* nav bar height */
     --main-header-height: 10rem;    /* first heading of the page */
-    --greet-height: 33.5rem;
+    --greet-height: 530px;
     
     --main-offset: var(--nav-height);
     --page-offset: calc(var(--main-offset) + var(--main-header-height));
@@ -322,7 +322,7 @@ button.menu:active {
 
 h1.profile-name {
     color: white;
-    margin: 0 0 0.8rem;
+    margin: 1rem 0 0.8rem;
     font-size: 2rem;
     line-height: 1.05;
 }
@@ -347,7 +347,7 @@ div.pp {
     max-width: 200px;
     max-height: 200px;
     overflow: hidden;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
     box-shadow: 0 0 4px 2px var(--gray-10);
 }
 
@@ -376,14 +376,19 @@ main {
 
 /* Footer */
 footer {
-    padding: 1.5rem 1rem;
-    margin: 0 auto;
-    font-size: 0.8rem;
-    line-height: 1rem;
-    height: 4rem;
+    /* padding: 1.5rem 1rem; */
+    /* margin: 0 auto; */
+
+    /* height: 4rem; */
     background-color: transparent;
     color: #ededed;
     text-align: center;
+}
+
+footer > p {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    margin: 1rem;
 }
 
 /********* Home *********/
@@ -446,6 +451,9 @@ p.hero-description {
     flex-direction: row;
 }
 
+.category-wrapper > .slide {
+    display: none;
+}
 .category > ul {
     padding: 0;
     list-style-type: none;
@@ -476,17 +484,16 @@ p.hero-description {
     width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
-    align-content: center;
+    align-content: space-evenly;
     justify-content: space-around;
-    padding: 0.5rem 1rem;
-    row-gap: 1rem;
+    padding: 0.8rem 1.5rem;
 }
 
 .skill {
-    width: fit-content;
-    margin: 0 1rem;
+    width: 8.5rem;
+    margin: 0 1.5rem 0.5rem 0;
     line-height: 2.2;
-    text-align: center;
+    text-align: left;
     font-size: 1.15rem;
     font-weight: 400;
     color: var(--gray-9);
@@ -497,22 +504,49 @@ p.hero-description {
     height: 36px;
     width: 36px;
 }
-@media screen and (max-width: 1080px) and (min-width: 925px) {
-    .skills {
-        padding: 0.5rem;
-        row-gap: 0.8rem;
-    }
+@media screen and (max-width: 1140px) and (min-width: 925px) {
     .skill {
         width: fit-content;
-        margin: 0 0.6rem;
+        margin: 0 1rem 0.5rem 0;
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 710px) {
+    .skill {
+        width: fit-content;
+        margin: 0 1rem 0.5rem 0;
         font-size: 1.1rem;
     }
 }
 @media screen and (max-width: 710px) {
+    .category-wrapper {
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        height: 2.8rem;
+    }
+    .category-wrapper > .slide {
+        display: block;
+    }
     .category {
         overflow-x: auto;
         height: fit-content;
+        padding-bottom: 1.2rem;
+        box-sizing: content-box;
     }
+    .slide:first-child {
+        left: -1rem;
+    }
+    .slide:last-child {
+        right: -1rem;
+    }
+    #slide-left {
+        fill: var(--gray-4);
+    }
+    #slide-right {
+        fill: var(--gray-8);
+    }
+
     .category > ul {
         display: flex;
         flex-direction: row;
@@ -520,11 +554,10 @@ p.hero-description {
         justify-content: normal;
     }
     .category li {
-        font-size: 0.8rem;
         border-right: none;
         border-bottom: 2px solid var(--gray-4);
         min-width: fit-content;
-        text-align: unset;
+        text-align: left;
     }
     .category li.active {
         border-right: none;
@@ -535,10 +568,9 @@ p.hero-description {
     }
     .skills {
         padding: 1rem 0.5rem;
-        background-color: transparent;
     }
     .skill {
-        width: fit-content;
+        width: 7.1rem;
         font-size: 0.9rem;
     }    
 }
@@ -694,11 +726,12 @@ div#todo > img {
         .grid-container {
             display: grid;
             grid-template-areas: 
-                "nul nv"
+                "nl0 nv"
                 "grt mn"
-                "ftr mn";
-            grid-template-columns: minmax(21rem, 1fr) minmax(0, 2fr);
-            grid-template-rows: var(--main-offset) 530px auto;
+                "ftr mn"
+                "nl1 mn";
+            grid-template-columns: minmax(21rem, 2fr) minmax(0, 5fr);
+            grid-template-rows: var(--main-offset) 530px calc(100vh - var(--main-offset) - var(--greet-height)) auto;
         }
         
         .greet {
@@ -709,6 +742,10 @@ div#todo > img {
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        h1.profile-name {
+            margin: 1rem 0 1.5rem;
         }
         
         nav {
@@ -723,10 +760,12 @@ div#todo > img {
         }
         
         footer {
-            --footer-offset: calc(var(--main-offset) + var(--greet-height));
+            --footer-offset: max(calc(100vh - 4rem), calc(var(--main-offset) + var(--greet-height)));
             position: sticky;
             top: var(--footer-offset);
+            height: 4rem;
             grid-area: ftr;
+            align-self: end;
         }
     }
     
@@ -736,7 +775,7 @@ div#todo > img {
         grid-template-columns: repeat(8, 1fr);
         gap: 0.2rem;
     }
-    @media screen and (max-width: 1700px) and (min-width: 1500px) {
+    @media screen and (max-width: 1440px) and (min-width: 1140px) {
         .images {
             grid-template-columns: repeat(7, 1fr);
         }
@@ -744,12 +783,15 @@ div#todo > img {
             display: none;
         }
     } 
-    @media screen and (max-width: 1500px) and (min-width: 1080px) {
+    @media screen and (max-width: 1140px) and (min-width: 1000px) {
         .images {
             grid-template-columns: repeat(6, 1fr);
         }
+        .images > div:nth-child(n + 13) {
+            display: none;
+        }
     }
-    @media screen and (max-width: 1080px) and (min-width: 925px) {
+    @media screen and (max-width: 1000px) and (min-width: 925px) {
         .images {
             grid-template-columns: repeat(5, 1fr);
         }
@@ -760,6 +802,9 @@ div#todo > img {
     @media screen and (max-width: 925px) and (min-width: 710px) {
         .images {
             grid-template-columns: repeat(6, 1fr);
+        }
+        .images > div:nth-child(n + 13) {
+            display: none;
         }
     }
     @media screen and (max-width: 710px) {

@@ -2,9 +2,8 @@
 
 form.form-control {
     width: 100%;
-    max-width: 650px;
+    max-width: 800px;
 }
-
 
 div.inp-name {
     display: flex;

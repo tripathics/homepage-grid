@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const md = require('markdown-it')();
-const kbd = require('markdown-it-kbd')
+const kbd = require('markdown-it-kbd');
 const markdownItAttrs = require('markdown-it-attrs');
 
 md.use(markdownItAttrs, {
